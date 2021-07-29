@@ -277,6 +277,10 @@ app.put("/items/edit-item-form/:id", itemValidation, async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
+  //Look for item 
+  //if the item was found -> update
+  //Look for updated item
+
   //update item with new info
   const updatedItem = await Item.update(req.body, {
     where: { id: req.params.id },
